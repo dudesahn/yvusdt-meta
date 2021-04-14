@@ -82,6 +82,7 @@ contract StrategyIceStakeryvUSDT is BaseStrategy {
         // maxReportDelay = 6300;
         // profitFactor = 100;
         // debtThreshold = 0;
+	pid = ??? // add correct pid here once we know it
     }
 
     function name() external view override returns (string memory) {
@@ -325,6 +326,11 @@ contract StrategyIceStakeryvUSDT is BaseStrategy {
 	// set this to the multiple we want to make on our harvests vs the cost
     function setharvestProfitFactor(uint256 _harvestProfitFactor) external onlyAuthorized {
     	harvestProfitFactor = _harvestProfitFactor;
+    }
+
+	// set this to our poolId
+    function setPoolId(uint256 _pid) external onlyAuthorized {
+    	pid = _pid;
     }
 
 }
